@@ -5,7 +5,6 @@
 //     Реалізувати перевірку на http / https.
 //     Якщо протокол не вказаний - додаємо
 
-
 const firstForm = document.querySelector(".first-form");
 const secondForm = document.querySelector(".second-form");
 const firstButton = document.querySelector(".first-button");
@@ -23,18 +22,21 @@ firstAddress.addEventListener("input", () => {
     }
 })
 
-firstButton.addEventListener("click", () => {
-    if ((firstAddress.value[0] === "h" && firstAddress.value[1] === "t" && firstAddress.value[2] === "t" && firstAddress.value[3] === "p"
-        && firstAddress.value[4] === ":" && firstAddress.value[5] === "/" && firstAddress.value[6] === "/")) {
-        console.log("ok http");
-    } else if ((firstAddress.value[0] === "h" && firstAddress.value[1] === "t" && firstAddress.value[2] === "t" && firstAddress.value[3] === "p" && firstAddress.value[4] === "s"
-        && firstAddress.value[5] === ":" && firstAddress.value[6] === "/" && firstAddress.value[7] === "/")) {
+function hasHttp(item) {
+    if ((item[0] === "h" && item[1] === "t" && item[2] === "t" && item[3] === "p"
+        && item[4] === ":" && item[5] === "/" && item[6] === "/")) {
+        return item;
+    } else if ((item[0] === "h" && item[1] === "t" && item[2] === "t" && item[3] === "p" && item[4] === "s"
+        && item[5] === ":" && item[6] === "/" && item[7] === "/")) {
         console.log("ok https");
-    } else {
-        firstAddress.value = `https://${firstAddress.value}`;
+        return item;
     }
+    return `https://${item}`;
+}
+
+firstButton.addEventListener("click", () => {
     console.log(firstAddress.value);
-    console.log(`Наш первый интернет адрес ${firstAddress.value}`);
+    console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
 });
 
 secondForm.addEventListener("click", e => {
@@ -48,20 +50,51 @@ secondAddress.addEventListener("input", () => {
 })
 
 secondButton.addEventListener("click", () => {
-    if ((secondAddress.value[0] === "h" && secondAddress.value[1] === "t" && secondAddress.value[2] === "t" && secondAddress.value[3] === "p"
-        && secondAddress.value[4] === ":" && secondAddress.value[5] === "/" && secondAddress.value[6] === "/")) {
-        console.log("ok http");
-    } else if ((secondAddress.value[0] === "h" && secondAddress.value[1] === "t" && secondAddress.value[2] === "t" && secondAddress.value[3] === "p" && secondAddress.value[4] === "s"
-        && secondAddress.value[5] === ":" && secondAddress.value[6] === "/" && secondAddress.value[7] === "/")) {
-        console.log("ok https");
-    } else {
-        secondAddress.value = `https://${secondAddress.value}`;
-    }
-
     console.log(secondAddress.value);
-    console.log(`Наш второй интернет адрес ${secondAddress.value}`);
+    console.log(`Наш второй интернет адрес ${hasHttp(secondAddress.value)}`);
 });
 
+// !!!!!!!!!!!!!! ЖЕКА
+// const form = document.getElementById("form");
+// const button = document.getElementById("submit");
+
+// const form1 = document.getElementById("form1");
+// const button1 = document.getElementById("submit1");
+
+// button.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     const http = document.getElementById("http").value;
+//     console.log(check(http));
+// });
+
+// form.addEventListener("input", () => {
+//     if (http) {
+//         button.removeAttribute("disabled");
+//     };
+// });
+
+// button1.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     const http1 = document.getElementById("http1").value;
+//     console.log(check(http1));
+// });
+
+// form1.addEventListener("input", () => {
+//     if (http1) {
+//         button1.removeAttribute("disabled");
+//     };
+// });
+
+// function check(i) {
+//     if (i.indexOf("http://") === 0 || i.indexOf("https://") === 0) {
+//         return i
+//     } else {
+//         return result = `https://${i}`;
+//     };
+// };
+// !!!!!!!!!!!!!!!!!!!!!!
 
 // ! ДЗ 36. Shapes ❤️🟢🔷
 
