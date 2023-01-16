@@ -23,12 +23,7 @@ firstAddress.addEventListener("input", () => {
 })
 
 function hasHttp(item) {
-    if ((item[0] === "h" && item[1] === "t" && item[2] === "t" && item[3] === "p"
-        && item[4] === ":" && item[5] === "/" && item[6] === "/")) {
-        return item;
-    } else if ((item[0] === "h" && item[1] === "t" && item[2] === "t" && item[3] === "p" && item[4] === "s"
-        && item[5] === ":" && item[6] === "/" && item[7] === "/")) {
-        console.log("ok https");
+    if ((item.indexOf("http://") === 0) || (item.indexOf("https://")) === 0) {
         return item;
     }
     return `https://${item}`;
@@ -90,9 +85,8 @@ secondButton.addEventListener("click", () => {
 // function check(i) {
 //     if (i.indexOf("http://") === 0 || i.indexOf("https://") === 0) {
 //         return i
-//     } else {
-//         return result = `https://${i}`;
-//     };
+//     }
+//     return result = `https://${i}`;
 // };
 // !!!!!!!!!!!!!!!!!!!!!!
 
