@@ -116,12 +116,16 @@ form.addEventListener("click", e => {
     e.preventDefault();
 });
 
-// div.classList.add("square");
+// div.classList.remove("square");
+
 
 button.addEventListener("click", () => {
-    if (select.value === "square") div.classList.add("square");
-    if (select.value === "rectangle") div.classList.add("rectangle");
-    if (select.value === "circle") div.classList.add("circle");
+    div.classList.remove("square");
+    div.classList.remove("rectangle");
+    div.classList.remove("circle");
+    if (select.value === "square") div.classList.toggle("square");
+    if (select.value === "rectangle") div.classList.toggle("rectangle");
+    if (select.value === "circle") div.classList.toggle("circle");
 
     div.style.backgroundColor = `${color.value}`;
 });
