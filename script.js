@@ -116,14 +116,12 @@ form.addEventListener("click", e => {
     e.preventDefault();
 });
 
-div.classList.add("square");
+// div.classList.add("square");
 
 button.addEventListener("click", () => {
     if (select.value === "square") div.classList.add("square");
     if (select.value === "rectangle") div.classList.add("rectangle");
     if (select.value === "circle") div.classList.add("circle");
 
-    if (color.value === "красный") div.style.backgroundColor = "red";
-    if (color.value === "зеленый") div.style.backgroundColor = "green";
-    if (color.value === "синий") div.style.backgroundColor = "blue";
+    div.style.backgroundColor = `${color.value}`;
 });
