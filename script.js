@@ -102,9 +102,9 @@
 
 const form = document.getElementById("form");
 
-const square = document.getElementById("square");
-const rectangle = document.getElementById("rectangle");
-const circle = document.getElementById("circle");
+// const square = document.getElementById("square");
+// const rectangle = document.getElementById("rectangle");
+// const circle = document.getElementById("circle");
 
 const option = document.querySelector(".option");
 const color = document.getElementById("color");
@@ -120,9 +120,10 @@ form.addEventListener("click", e => {
 
 
 button.addEventListener("click", () => {
-    div.classList.remove("square");
-    div.classList.remove("rectangle");
-    div.classList.remove("circle");
+    document.querySelector("#div").className = "";
+    //     div.classList.remove("square");
+    // div.classList.remove("rectangle");
+    // div.classList.remove("circle");
     if (select.value === "square") div.classList.toggle("square");
     if (select.value === "rectangle") div.classList.toggle("rectangle");
     if (select.value === "circle") div.classList.toggle("circle");
