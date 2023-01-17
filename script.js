@@ -5,49 +5,49 @@
 //     Реалізувати перевірку на http / https.
 //     Якщо протокол не вказаний - додаємо
 
-const firstForm = document.querySelector(".first-form");
-const secondForm = document.querySelector(".second-form");
-const firstButton = document.querySelector(".first-button");
-const secondButton = document.querySelector(".second-button");
-const firstAddress = document.getElementById("first-input");
-const secondAddress = document.getElementById("second-input");
+// const firstForm = document.querySelector(".first-form");
+// const secondForm = document.querySelector(".second-form");
+// const firstButton = document.querySelector(".first-button");
+// const secondButton = document.querySelector(".second-button");
+// const firstAddress = document.getElementById("first-input");
+// const secondAddress = document.getElementById("second-input");
 
-firstForm.addEventListener("click", e => {
-    e.preventDefault();
-});
+// firstForm.addEventListener("click", e => {
+//     e.preventDefault();
+// });
 
-firstAddress.addEventListener("input", () => {
-    if (firstAddress.value) {
-        firstButton.removeAttribute("disabled");
-    }
-})
+// firstAddress.addEventListener("input", () => {
+//     if (firstAddress.value) {
+//         firstButton.removeAttribute("disabled");
+//     }
+// })
 
-function hasHttp(item) {
-    if ((item.indexOf("http://") === 0) || (item.indexOf("https://")) === 0) {
-        return item;
-    }
-    return `https://${item}`;
-}
+// function hasHttp(item) {
+//     if ((item.indexOf("http://") === 0) || (item.indexOf("https://")) === 0) {
+//         return item;
+//     }
+//     return `https://${item}`;
+// }
 
-firstButton.addEventListener("click", () => {
-    console.log(firstAddress.value);
-    console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
-});
+// firstButton.addEventListener("click", () => {
+//     console.log(firstAddress.value);
+//     console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
+// });
 
-secondForm.addEventListener("click", e => {
-    e.preventDefault();
-});
+// secondForm.addEventListener("click", e => {
+//     e.preventDefault();
+// });
 
-secondAddress.addEventListener("input", () => {
-    if (secondAddress.value) {
-        secondButton.removeAttribute("disabled");
-    }
-})
+// secondAddress.addEventListener("input", () => {
+//     if (secondAddress.value) {
+//         secondButton.removeAttribute("disabled");
+//     }
+// })
 
-secondButton.addEventListener("click", () => {
-    console.log(secondAddress.value);
-    console.log(`Наш второй интернет адрес ${hasHttp(secondAddress.value)}`);
-});
+// secondButton.addEventListener("click", () => {
+//     console.log(secondAddress.value);
+//     console.log(`Наш второй интернет адрес ${hasHttp(secondAddress.value)}`);
+// });
 
 // !!!!!!!!!!!!!! ЖЕКА
 // const form = document.getElementById("form");
@@ -100,3 +100,30 @@ secondButton.addEventListener("click", () => {
 
 // input для выбора цвета.При его изменении меняется цвет фигуры
 
+const form = document.getElementById("form");
+
+const square = document.getElementById("square");
+const rectangle = document.getElementById("rectangle");
+const circle = document.getElementById("circle");
+
+const option = document.querySelector(".option");
+const color = document.getElementById("color");
+
+const button = document.getElementById("button");
+const div = document.getElementById("div");
+
+form.addEventListener("click", e => {
+    e.preventDefault();
+});
+
+div.classList.add("square");
+
+button.addEventListener("click", () => {
+    if (select.value === "square") div.classList.add("square");
+    if (select.value === "rectangle") div.classList.add("rectangle");
+    if (select.value === "circle") div.classList.add("circle");
+
+    if (color.value === "красный") div.style.backgroundColor = "red";
+    if (color.value === "зеленый") div.style.backgroundColor = "green";
+    if (color.value === "синий") div.style.backgroundColor = "blue";
+});
