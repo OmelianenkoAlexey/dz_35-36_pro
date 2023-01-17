@@ -102,11 +102,7 @@
 
 const form = document.getElementById("form");
 
-// const square = document.getElementById("square");
-// const rectangle = document.getElementById("rectangle");
-// const circle = document.getElementById("circle");
-
-const option = document.querySelector(".option");
+// const option = document.querySelector(".option");
 const color = document.getElementById("color");
 
 const button = document.getElementById("button");
@@ -116,17 +112,12 @@ form.addEventListener("click", e => {
     e.preventDefault();
 });
 
-// div.classList.remove("square");
-
-
 button.addEventListener("click", () => {
     document.querySelector("#div").className = "";
-    //     div.classList.remove("square");
-    // div.classList.remove("rectangle");
-    // div.classList.remove("circle");
-    if (select.value === "square") div.classList.toggle("square");
-    if (select.value === "rectangle") div.classList.toggle("rectangle");
-    if (select.value === "circle") div.classList.toggle("circle");
 
-    div.style.backgroundColor = `${color.value}`;
+    if (select.value === "square") div.classList.add("square");
+    if (select.value === "rectangle") div.classList.add("rectangle");
+    if (select.value === "circle") div.classList.add("circle");
+
+    div.style.backgroundColor = `${color.value}`
 });
