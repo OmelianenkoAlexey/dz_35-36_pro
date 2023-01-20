@@ -5,49 +5,49 @@
 //     Реалізувати перевірку на http / https.
 //     Якщо протокол не вказаний - додаємо
 
-// const firstForm = document.querySelector(".first-form");
+const firstForm = document.querySelector(".first-form");
 // const secondForm = document.querySelector(".second-form");
-// const firstButton = document.querySelector(".first-button");
-// const secondButton = document.querySelector(".second-button");
-// const firstAddress = document.getElementById("first-input");
-// const secondAddress = document.getElementById("second-input");
+const firstButton = document.querySelector(".first-button");
+const secondButton = document.querySelector(".second-button");
+const firstAddress = document.getElementById("first-input");
+const secondAddress = document.getElementById("second-input");
 
-// firstForm.addEventListener("click", e => {
-//     e.preventDefault();
-// });
+firstForm.addEventListener("click", e => {
+    e.preventDefault();
+});
 
-// firstAddress.addEventListener("input", () => {
-//     if (firstAddress.value) {
-//         firstButton.removeAttribute("disabled");
-//     }
-// })
+firstAddress.addEventListener("input", () => {
+    if (firstAddress.value) {
+        firstButton.removeAttribute("disabled");
+    }
+})
 
-// function hasHttp(item) {
-//     if ((item.indexOf("http://") === 0) || (item.indexOf("https://")) === 0) {
-//         return item;
-//     }
-//     return `https://${item}`;
-// }
+function hasHttp(item) {
+    if ((item.indexOf("http://") === 0) || (item.indexOf("https://")) === 0) {
+        return item;
+    }
+    return `https://${item}`;
+}
 
-// firstButton.addEventListener("click", () => {
-//     console.log(firstAddress.value);
-//     console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
-// });
+firstButton.addEventListener("click", () => {
+    console.log(firstAddress.value);
+    console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
+});
 
 // secondForm.addEventListener("click", e => {
 //     e.preventDefault();
 // });
 
-// secondAddress.addEventListener("input", () => {
-//     if (secondAddress.value) {
-//         secondButton.removeAttribute("disabled");
-//     }
-// })
+secondAddress.addEventListener("input", () => {
+    if (secondAddress.value) {
+        secondButton.removeAttribute("disabled");
+    }
+})
 
-// secondButton.addEventListener("click", () => {
-//     console.log(secondAddress.value);
-//     console.log(`Наш второй интернет адрес ${hasHttp(secondAddress.value)}`);
-// });
+secondButton.addEventListener("click", () => {
+    console.log(secondAddress.value);
+    console.log(`Наш второй интернет адрес ${hasHttp(secondAddress.value)}`);
+});
 
 // !!!!!!!!!!!!!! ЖЕКА
 // const form = document.getElementById("form");
@@ -100,24 +100,21 @@
 
 // input для выбора цвета.При его изменении меняется цвет фигуры
 
-const form = document.getElementById("form");
+// const form = document.getElementById("form");
+// const color = document.getElementById("color");
+// const button = document.getElementById("button");
+// const div = document.getElementById("div");
 
-// const option = document.querySelector(".option");
-const color = document.getElementById("color");
+// form.addEventListener("click", e => {
+//     e.preventDefault();
+// });
 
-const button = document.getElementById("button");
-const div = document.getElementById("div");
+// button.addEventListener("click", () => {
+//     document.querySelector("#div").className = "";
 
-form.addEventListener("click", e => {
-    e.preventDefault();
-});
+//     if (select.value === "square") div.classList.add("square");
+//     if (select.value === "rectangle") div.classList.add("rectangle");
+//     if (select.value === "circle") div.classList.add("circle");
 
-button.addEventListener("click", () => {
-    document.querySelector("#div").className = "";
-
-    if (select.value === "square") div.classList.add("square");
-    if (select.value === "rectangle") div.classList.add("rectangle");
-    if (select.value === "circle") div.classList.add("circle");
-
-    div.style.backgroundColor = `${color.value}`
-});
+//     div.style.backgroundColor = `${color.value}`
+// });

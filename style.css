@@ -6,6 +6,21 @@
     padding: 0; */
 }
 
+.first-form,
+.second-form {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.first-button,
+.second-button {
+    margin-bottom: 10px;
+}
+
 .form-container {
     margin-top: 100px;
     margin-left: auto;
