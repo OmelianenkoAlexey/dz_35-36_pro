@@ -6,7 +6,6 @@
 //     Якщо протокол не вказаний - додаємо
 
 const firstForm = document.querySelector(".first-form");
-// const secondForm = document.querySelector(".second-form");
 const firstButton = document.querySelector(".first-button");
 const secondButton = document.querySelector(".second-button");
 const firstAddress = document.getElementById("first-input");
@@ -33,10 +32,6 @@ firstButton.addEventListener("click", () => {
     console.log(firstAddress.value);
     console.log(`Наш первый интернет адрес ${hasHttp(firstAddress.value)}`);
 });
-
-// secondForm.addEventListener("click", e => {
-//     e.preventDefault();
-// });
 
 secondAddress.addEventListener("input", () => {
     if (secondAddress.value) {
